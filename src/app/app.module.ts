@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ControlMessagesComponent } from './common/control-messages.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { ActivateAccountComponent } from './auth/activate-account/activate-account.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     DashboardComponent,
     SignupComponent,
     ControlMessagesComponent,
+    ActivateAccountComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule],
   providers: [

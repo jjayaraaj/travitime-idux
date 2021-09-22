@@ -1,0 +1,53 @@
+<div class="signup-main-div">
+  <div class="row p-0 m-0 h-100">
+    <div class="col-12 col-md-4 p-0  signup-left-div">
+      <img src="https://via.placeholder.com/520x300" class="img-fluid w-100" alt="">
+      <div class="p-5 bg-blue"></div>
+    </div>
+
+    <div class="col-12 col-md-8 p-0 ">
+      <div class="w-60 m-auto">
+        <h2 class="py-5">Travitime</h2>
+        <div class="py-5 border rounded position-relative">
+          <div class="position-absolute bg-white px-4" style="top:-10px; left:30px">
+            <h5>Create your Account</h5>
+          </div>
+          <form class="" [formGroup]="signupForm" novalidate (ngSubmit)="onSubmit()" class="needs-validation">
+            <div class="" class="px-5">
+
+              <div class="form-group pt-4">
+                <div class="label">Email </div>
+                <input type="email" class="form-control" placeholder="(eg) xyz@domain.com" formControlName="userEmail">
+                <div *ngIf="f.userEmail.errors && f.userEmail.touched" class="form-text  text-danger">
+                  <div *ngIf="f.userEmail.errors.required || f.userEmail.errors.invalidEmailAddress">Please Enter Valid
+                    Email ID</div>
+                </div>
+
+              </div>
+              <div class="form-group pt-4">
+                <div class="label">Password </div>
+                <input type="password" class="form-control" placeholder="Your Password" formControlName="password">
+                <div *ngIf="f.password.errors && f.password.touched" class="form-text  text-danger">
+                  <div *ngIf="f.password.errors.required">Please Enter Password</div>
+                </div>
+              </div>
+              <div class="form-group pt-4">
+                <div class="label">Phone</div>
+                <input type="text" class="form-control" formControlName="phone" placeholder="Your Contact">
+                <div *ngIf="f.phone.errors && f.phone.touched" class="form-text  text-danger">
+                  <div *ngIf="f.phone.errors.required">Please Enter Phone Number</div>
+                </div>
+
+              </div>
+              <div class="pt-5"></div>
+              <button class="signup-btn" type="submit"> Complete Signup </button>
+              <div *ngIf="isLoading">Loading...</div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

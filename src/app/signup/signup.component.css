@@ -1,0 +1,38 @@
+.signup-main-div {
+  height: 100vh;
+}
+.signup-left-div {
+  background-color: var(--bs-indigo);
+}
+
+.form-control {
+  padding: 10px 6px;
+}
+
+.w-60 {
+  width: 60%;
+  margin: auto;
+}
+
+.label {
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.signup-btn {
+  border: none;
+  background-color: var(--bs-indigo);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 15px 25px;
+}
+
+.signup-btn:disabled {
+  background-color: var(--bs-secondary);
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}

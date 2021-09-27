@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ControlMessagesComponent } from './common/control-messages.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ActivateAccountComponent } from './auth/activate-account/activate-account.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ActivateAccountComponent } from './auth/activate-account/activate-accou
     SignupComponent,
     ControlMessagesComponent,
     ActivateAccountComponent,
+    ForgotPasswordComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule],
   providers: [

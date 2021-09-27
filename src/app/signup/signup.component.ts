@@ -2,6 +2,8 @@ import { SignupService } from './../service/signup/signup.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ValidationService } from '../common/validation.service';
+import { Observable, timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,12 +16,17 @@ export class SignupComponent implements OnInit {
   formErrors: any;
   isLoading = false;
   accountActivated = false;
+  sigunpSuccess = false;
 
   get f() {
     return this.signupForm.controls;
   }
 
-  constructor(private fb: FormBuilder, private signupService: SignupService) {}
+  constructor(
+    private fb: FormBuilder,
+    private signupService: SignupService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.initSignupForm();
@@ -38,8 +45,15 @@ export class SignupComponent implements OnInit {
     this.isLoading = true;
     this.signupService.newSignup(this.signupForm.value);
 
-    setTimeout(() => {
+    const timerSource = timer(3000);
+
+    timerSource.subscribe((val) => {
       this.isLoading = false;
-    }, 5000);
+      this.sigunpSuccess = true;
+    });
+
+    // setTimeout(() => {
+    //   this.isLoading = false;
+    // }, 5000);
   }
 }

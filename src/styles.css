@@ -12,6 +12,7 @@
   --bs-cyan: #0dcaf0;
   --bs-white: #fff;
   --bs-gray: #6c757d;
+  --bs-gray-200: #eaeaf4;
   --bs-gray-dark: #343a40;
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
@@ -38,4 +39,43 @@
 }
 .bg-blue {
   background-color: var(--bs-blue);
+}
+.bg-blue-400 {
+  background-color: #e8f6ff;
+}
+
+.bg-gray {
+  background-color: var(--bs-gray-200);
+}
+
+::placeholder {
+  color: rgb(184, 184, 184);
+  opacity: 1; /* Firefox */
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+.mh-100vh {
+  min-height: 100vh;
+}
+
+.btn {
+  font-size: 0.9em;
+  padding: 10px 20px;
+}
+
+.btn-primary {
+  background-color: #014dc4;
+  filter: drop-shadow(0px 0px 1px #062a64);
 }

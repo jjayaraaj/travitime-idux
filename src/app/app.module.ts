@@ -12,6 +12,9 @@ import { ControlMessagesComponent } from './common/control-messages.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ActivateAccountComponent } from './auth/activate-account/activate-account.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,15 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
     ActivateAccountComponent,
     ForgotPasswordComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    CarouselModule,
+  ],
   providers: [
     {
       provide: LocationStrategy,

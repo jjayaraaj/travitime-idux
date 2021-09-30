@@ -1,11 +1,35 @@
 <div class="signup-main-div secondgit log">
   <div class="row p-0 m-0 h-100">
     <div class="col-12 col-md-5 p-0  signup-left-div">
-      <img src="assets/images/signup-left.jpg" class="img-fluid w-100" style="object-fit: cover;" alt="">
+      <div class="p-5 text-center text-md-start">
+        <img src="assets/images/tt-logo-white.png" class="img-fluid logo" alt="">
+        <div style="height: 100px;" class="d-none d-md-block"></div>
+        <owl-carousel-o [options]="customOptions" class="d-none d-md-block">
+          <ng-template carouselSlide>
+            <h6 class="text-white">Travitime works as personal assistant
+              for your customers helping them plan
+              around their trip schedules and
+              become a more smart traveler.</h6>
+          </ng-template>
+          <ng-template carouselSlide>
+            <h6 class="text-white">Travitime works as personal assistant
+              for your customers helping them plan
+              around their trip schedules and
+              become a more smart traveler.</h6>
+          </ng-template>
+          <ng-template carouselSlide>
+            <h6 class="text-white">Travitime works as personal assistant
+              for your customers helping them plan
+              around their trip schedules and
+              become a more smart traveler.</h6>
+          </ng-template>
+        </owl-carousel-o>
+
+      </div>
     </div>
 
-    <div class="col-12 col-md-7 p-0 ">
-      <div class="w-60 m-auto pt-5">
+    <div class="col-12 col-md-7 p-0">
+      <div class="w-60 m-auto ">
 
 
         <!-- SignUp screen -->
@@ -16,7 +40,15 @@
               <div class="" class="px-5">
                 <h4>Set up your Travitime Account</h4>
                 <div class="form-group pt-4">
-                  <div class="label">Email </div>
+                  <div class="label">Full Name</div>
+                  <input type="email" class="form-control" placeholder="Your Name" formControlName="fullName">
+                  <div *ngIf="f.fullName.errors && f.fullName.touched" class="form-text  text-danger">
+                    <div *ngIf="f.fullName.errors.required">Please Enter your Name </div>
+                  </div>
+
+                </div>
+                <div class="form-group pt-4">
+                  <div class="label">Work Email Address </div>
                   <input type="email" class="form-control" placeholder="(eg) xyz@domain.com"
                     formControlName="userEmail">
                   <div *ngIf="f.userEmail.errors && f.userEmail.touched" class="form-text  text-danger">
@@ -27,24 +59,48 @@
 
                 </div>
                 <div class="form-group pt-4">
-                  <div class="label">Password </div>
+                  <div class="label">Password (min 8 characters) </div>
                   <input type="password" class="form-control" placeholder="Your Password" formControlName="password">
                   <div *ngIf="f.password.errors && f.password.touched || f.submitted" class="form-text  text-danger">
                     <div *ngIf="f.password.errors.required">Please Enter Password</div>
                   </div>
                 </div>
+
                 <div class="form-group pt-4">
-                  <div class="label">Phone</div>
+                  <div class="label">Company Name</div>
+                  <input type="text" class="form-control" placeholder="Your Password" formControlName="companyName">
+                  <div *ngIf="f.companyName.errors && f.companyName.touched || f.submitted"
+                    class="form-text  text-danger">
+                    <div *ngIf="f.companyName.errors.required">Please Enter Password</div>
+                  </div>
+                </div>
+                <div class="form-group pt-4">
+                  <div class="label">Phone Number</div>
                   <input type="text" class="form-control" formControlName="phone" placeholder="Your Contact">
                   <div *ngIf="f.phone.errors && f.phone.touched" class="form-text  text-danger">
                     <div *ngIf="f.phone.errors.required">Please Enter Phone Number</div>
                   </div>
 
                 </div>
-                <div class="pt-5"></div>
-                <button class="signup-btn" type="submit" [disabled]="!signupForm.valid" *ngIf="!isLoading"> Complete
-                  Signup
+                <div class="form-check pt-2">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label min-text" for="flexCheckDefault">
+                    Subscibe me for updates, news and recommendations
+                  </label>
+                </div>
+                <div class="pt-4"></div>
+                <button class="btn-orange " type="submit" [disabled]="!signupForm.valid" *ngIf="!isLoading">
+                  Create Free
+                  Travitime Account
                 </button>
+                <p class="min-text pt-2">
+                  Your free account is subject to the <a href="#">Terms and Conditions</a>. See our <a href="#">Privacy
+                    policy</a>
+                  for details as to how we use your personal data and your rights..
+                </p>
+
+
+                <p>Already have an Travitime account? <a href="#">Login in Now</a></p>
 
                 <div *ngIf="isLoading" class="spinner-border" role="status">
 
@@ -58,7 +114,7 @@
 
         <!-- SignUp success screen -->
         <ng-template #signupSuccessDiv>
-          <div class="py-5 border rounded position-relative">
+          <div class="py-5 border rounded position-relative mt-5">
             <div class="position-absolute bg-white px-4" style="top:-10px; left:30px">
               <h5>Activate Your Account</h5>
 
@@ -66,7 +122,7 @@
             <div class="p-5">
               <h6> Your account has been created. To activate your account check your email</h6>
               <div class="py-2"></div>
-              <a class="btn btn-primary">Resend Email</a>
+              <a class="btn btn-orange">Resend Email</a>
             </div>
           </div>
         </ng-template>

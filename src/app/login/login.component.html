@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white login-menu">
   <div class="container">
-    <a class="navbar-brand" href="#"><img src="assets/images/tt-logo-blue.png" class="img-fluid w-50"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+    <a class="navbar-brand text-center text-md-start" href="#"><img src="assets/images/tt-logo-blue.png"
+        class="img-fluid w-50"></a>
+    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
+    <div class="collapse navbar-collapse " id="navbarText">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">For Travel Agencies & Tour Operators</a>
@@ -25,12 +26,12 @@
   </div>
 </nav>
 
-<div class="bg-blue-400 d-flex align-itmes-center" style="min-height: 90vh;">
+<div class="bg-blue-400 d-flex align-itmes-center main-div">
   <!-- <div class="container-fluid p-5 d-flex justify-content-between align-itmes-center">
     <h3>Travitime</h3>
     <p><em>Dont have an account? </em> <a routerLink="/signup">sign up</a></p>
   </div> -->
-  <div class=" m-auto p-5 bg-white rounded shadow-sm" style="width: 35%; ">
+  <div class=" m-auto p-5 bg-white rounded shadow-sm login-div">
     <div class="row">
       <div class="col-12 col-md-12 px-5">
         <h5 class="text-secondary">Login in to your Travitime account</h5>
@@ -55,12 +56,13 @@
         </div>
 
         <div class="d-grid">
-          <button class="btn btn-primary">Sign in</button>
+          <button class="btn-orange">Sign in</button>
 
         </div>
 
       </div>
     </div>
+    <p class="pt-3 text-center min-text"><em>Dont have an account? <a [routerLink]="'/signup'"> Sign up</a></em></p>
   </div>
 
 </div>

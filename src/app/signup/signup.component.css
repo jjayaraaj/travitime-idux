@@ -2,31 +2,37 @@
   height: 100vh;
 }
 .signup-left-div {
-  background-color: var(--bs-indigo);
+  /* background-color: var(--bs-indigo); */
+  background: url(/assets/images/signup-bg.jpg) no-repeat;
+  background-size: cover;
 }
 
 .form-control {
-  padding: 10px 6px;
+  padding: 5px 6px;
 }
 
 .w-60 {
   width: 60%;
   margin: auto;
 }
+.logo {
+  width: 30%;
+}
 
 .label {
   font-weight: 500;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .signup-btn {
   border: none;
-  background-color: var(--bs-indigo);
+  background-color: #fd7f00;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 500;
   border-radius: 5px;
-  padding: 15px 25px;
+  padding: 10px 15px;
+  width: 100%;
 }
 
 .signup-btn:disabled {
@@ -35,4 +41,81 @@
 
 .ng-invalid.ng-touched {
   border-color: red;
+}
+
+h6 {
+  font-size: 1.4em;
+  font-weight: 300;
+  padding: 100px;
+  line-height: 1.5em;
+}
+
+h6::before {
+  content: "";
+  /* background: url(/assets/images/top-qoutes.png); */
+  height: 50px;
+  width: 50px;
+  content: "";
+  background: url("/assets/images/top-qoutes.png") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  opacity: 1;
+  top: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+h6::after {
+  content: "";
+  /* background: url(/assets/images/top-qoutes.png); */
+  height: 50px;
+  width: 50px;
+  content: "";
+  background: url("/assets/images/bottom-qoutes.png") no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  opacity: 1;
+  bottom: 0px;
+  right: 0px;
+
+  z-index: -1;
+}
+
+::placeholder {
+  color: rgb(184, 184, 184);
+  opacity: 0.5; /* Firefox */
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+@media (max-width: 767.98px) {
+  .p-5 {
+    padding: 1em !important;
+  }
+  .pt-4 {
+    padding-top: 0.4em !important;
+  }
+  .px-5 {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+  .py-5 {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+  }
+  .w-60 {
+    width: 90%;
+  }
 }

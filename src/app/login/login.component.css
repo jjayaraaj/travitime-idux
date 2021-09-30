@@ -2,3 +2,44 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
+
+.login-div {
+  width: 35%;
+}
+.main-div {
+  min-height: 90vh;
+}
+
+::placeholder {
+  color: rgb(184, 184, 184);
+  opacity: 0.5; /* Firefox */
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgb(184, 184, 184);
+  font-style: italic;
+}
+
+@media (max-width: 767.98px) {
+  .login-div {
+    width: 100%;
+  }
+  .px-5 {
+    padding-left: 0.5em !important;
+    padding-right: 0.5em !important;
+  }
+  .main-div {
+    min-height: auto;
+  }
+  .navbar-brand {
+    padding-top: 20px;
+  }
+}

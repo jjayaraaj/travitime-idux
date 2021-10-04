@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-size: 14px;
+}
 :root {
   --bs-blue: #38039a;
   --bs-indigo: #500ad2;
@@ -32,6 +35,8 @@
     rgba(255, 255, 255, 0.15),
     rgba(255, 255, 255, 0)
   );
+  --tt-bg-primary: #2b0968;
+  --tt-bg-primary-200: #521b9d;
 }
 
 .bg-indigo {
@@ -98,4 +103,12 @@
 .btn-orange:disabled {
   /* background-color: var(--bs-secondary); */
   background-color: #8a5d2f;
+}
+
+.tt-bg-primary {
+  background-color: var(--tt-bg-primary);
+}
+
+.tt-bg-primary-200 {
+  background-color: var(--tt-bg-primary-200);
 }

@@ -7,7 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SignupComponent } from './signup/signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ControlMessagesComponent } from './common/control-messages.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ActivateAccountComponent } from './auth/activate-account/activate-account.component';
@@ -34,6 +34,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     RouterModule,
     BrowserAnimationsModule,
     CarouselModule,
+    FormsModule,
   ],
   providers: [
     {

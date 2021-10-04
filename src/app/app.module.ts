@@ -15,6 +15,7 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { TourComponent } from './dashboard/tour/tour.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ControlMessagesComponent,
     ActivateAccountComponent,
     ForgotPasswordComponent,
+    TourComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { AuthServices } from './../service/auth/auth.services';
 import { Component, HostListener, OnInit } from '@angular/core';
 
 interface Country {
@@ -101,7 +102,9 @@ export class DashboardComponent implements OnInit {
   countries = COUNTRIES;
   public screenWidth: any;
   public screenHeight: any;
-  constructor() {}
+
+  constructor(private authService: AuthServices) {}
+
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
     this.refreshCountries();
@@ -126,5 +129,9 @@ export class DashboardComponent implements OnInit {
   onResize(event) {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

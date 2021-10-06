@@ -16,6 +16,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TourComponent } from './dashboard/tour/tour.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastComponent } from './common/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { TourComponent } from './dashboard/tour/tour.component';
     ActivateAccountComponent,
     ForgotPasswordComponent,
     TourComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TourComponent } from './dashboard/tour/tour.component';
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     {

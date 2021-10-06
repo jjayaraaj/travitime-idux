@@ -52,9 +52,9 @@
                   <input type="email" class="form-control" placeholder="(eg) xyz@domain.com"
                     formControlName="userEmail">
                   <div *ngIf="f.userEmail.errors && f.userEmail.touched" class="form-text  text-danger">
-                    <div *ngIf="f.userEmail.errors.required || f.userEmail.errors.invalidEmailAddress">Please Enter
-                      Valid
-                      Email ID</div>
+                    <!-- <div *ngIf="f['userEmail'].errors.required">Email is required</div> -->
+
+                    <div *ngIf="f['userEmail'].errors.invalidEmailAddress">Invalid Email</div>
                   </div>
 
                 </div>
@@ -62,16 +62,18 @@
                   <div class="label">Password (min 8 characters) </div>
                   <input type="password" class="form-control" placeholder="Your Password" formControlName="password">
                   <div *ngIf="f.password.errors && f.password.touched || f.submitted" class="form-text  text-danger">
-                    <div *ngIf="f.password.errors.required">Please Enter Password</div>
+                    <!-- <div *ngIf="f.password.errors.required">Please Enter Password</div> -->
+                    <div *ngIf="f['password'].errors.minlength">{{formErrors.password.minLength}}</div>
+                    <div *ngIf="f['password'].errors.pattern">{{formErrors.password.pattern}}</div>
                   </div>
                 </div>
 
                 <div class="form-group pt-4">
                   <div class="label">Company Name</div>
-                  <input type="text" class="form-control" placeholder="Your Password" formControlName="companyName">
+                  <input type="text" class="form-control" placeholder="Your Company " formControlName="companyName">
                   <div *ngIf="f.companyName.errors && f.companyName.touched || f.submitted"
                     class="form-text  text-danger">
-                    <div *ngIf="f.companyName.errors.required">Please Enter Password</div>
+                    <div *ngIf="f.companyName.errors.required">Please Enter Company Name</div>
                   </div>
                 </div>
                 <div class="form-group pt-4">
@@ -112,6 +114,7 @@
 
         </div>
 
+
         <!-- SignUp success screen -->
         <ng-template #signupSuccessDiv>
           <div class="py-5 border rounded position-relative mt-5">
@@ -134,3 +137,4 @@
 
   </div>
 </div>
+<app-toast></app-toast>

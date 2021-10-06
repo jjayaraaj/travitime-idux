@@ -5,6 +5,8 @@ import { ValidationService } from '../common/validation.service';
 import { Observable, timer } from 'rxjs';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ValidationFormsService } from '../service/common/validation-form.service';
+import { ToastService } from '../service/common/toast.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,6 +20,7 @@ export class SignupComponent implements OnInit {
   isLoading = false;
   accountActivated = false;
   sigunpSuccess = false;
+  show = true;
 
   get f() {
     return this.signupForm.controls;
@@ -51,8 +54,12 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private signupService: SignupService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private vf: ValidationFormsService,
+    public toastService: ToastService
+  ) {
+    this.formErrors = this.vf.errorMessages;
+  }
 
   ngOnInit(): void {
     this.initSignupForm();
@@ -60,11 +67,27 @@ export class SignupComponent implements OnInit {
 
   initSignupForm(): void {
     this.signupForm = this.fb.group({
-      fullName: ['', [Validators.required]],
-      userEmail: ['', [Validators.required, ValidationService.emailValidator]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      companyName: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
+      fullName: ['jauyasj', [Validators.required]],
+      userEmail: [
+        'jjayaraaj@gmail.com',
+        [Validators.required, ValidationService.emailValidator],
+      ],
+      password: [
+        'Asdfdf4r5t',
+        [
+          Validators.required,
+          Validators.minLength(this.vf.formRules.passwordMin),
+          Validators.pattern(this.vf.formRules.passwordPattern),
+        ],
+      ],
+      companyName: ['test', [Validators.required]],
+      phone: [
+        '111111111111',
+        [
+          Validators.required,
+          Validators.pattern(this.vf.formRules.phonePattern),
+        ],
+      ],
     });
   }
 
@@ -75,18 +98,27 @@ export class SignupComponent implements OnInit {
     // });
     if (this.signupForm.invalid) return;
     this.isLoading = true;
-    this.signupService.newSignup(this.signupForm.value);
+    this.signupService.newSignup(this.signupForm.value).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (error) => {
+        this.isLoading = false;
+        const dangerTpl = error;
+        this.toastService.show(dangerTpl, {
+          classname: 'bg-danger text-light',
+          delay: 3000,
+          autohide: true,
+        });
+      }
+    );
 
-    const timerSource = timer(3000);
+    // const timerSource = timer(3000);
 
-    timerSource.subscribe((val) => {
-      this.isLoading = false;
-      this.sigunpSuccess = true;
-    });
-
-    // setTimeout(() => {
+    // timerSource.subscribe((val) => {
     //   this.isLoading = false;
-    // }, 5000);
+    //   this.sigunpSuccess = true;
+    // });
   }
 
   onCaptchaResponse(event) {

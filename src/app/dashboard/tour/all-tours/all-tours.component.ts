@@ -3,12 +3,7 @@ import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 // import { COUNTRIES } from 'src/app/data/countries';
-import {
-  NgbdSortableHeader,
-  SortEvent,
-} from 'src/app/directives/sortable.directive';
 // import { Country } from 'src/app/model/country';
-import { CountryService } from 'src/app/service/common/country.service';
 
 interface Country {
   id?: number;

@@ -5,4 +5,6 @@ export interface OperatorModel {
   token: string;
   expiresIn?: number;
   role: string;
+  company: string;
+  uniqueOperatorId: string;
 }

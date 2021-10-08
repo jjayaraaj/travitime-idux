@@ -4,7 +4,9 @@ export class OperatorUser {
     public id: number,
     private _token: string,
     public role: string,
-    public tokenExpirationDate: Date
+    public tokenExpirationDate: Date,
+    public uniqueOperatorId: string,
+    public company: string
   ) {}
 
   get token() {

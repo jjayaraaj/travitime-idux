@@ -11,6 +11,7 @@ import { ToastService } from '../service/common/toast.service';
 })
 export class LoginComponent implements OnInit {
   isLoading = false;
+  showPassword = false;
 
   constructor(
     private authService: AuthServices,
@@ -18,7 +19,9 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.autoLogin();
+  }
 
   onSubmit(form: NgForm) {
     this.authService.login(form.value).subscribe(
@@ -37,5 +40,9 @@ export class LoginComponent implements OnInit {
         });
       }
     );
+  }
+
+  onClickEye() {
+    this.showPassword = !this.showPassword;
   }
 }

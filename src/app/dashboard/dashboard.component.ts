@@ -1,5 +1,7 @@
+import { OperatorModel } from 'src/app/model/operator';
 import { AuthServices } from './../service/auth/auth.services';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { take } from 'rxjs/operators';
 
 interface Country {
   name: string;
@@ -102,6 +104,7 @@ export class DashboardComponent implements OnInit {
   countries = COUNTRIES;
   public screenWidth: any;
   public screenHeight: any;
+  operatorUser: OperatorModel;
 
   constructor(private authService: AuthServices) {}
 
@@ -110,7 +113,11 @@ export class DashboardComponent implements OnInit {
     this.refreshCountries();
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
-    console.log(this.screenWidth);
+
+    this.authService.operatorUser.pipe(take(1)).subscribe((user) => {
+      this.operatorUser = user;
+      console.log(this.operatorUser);
+    });
   }
   onClickSidebarMenu() {
     this.open = !this.open;

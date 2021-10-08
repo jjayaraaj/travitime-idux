@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
 body {
   font-size: 14px;
 }
@@ -35,8 +39,8 @@ body {
     rgba(255, 255, 255, 0.15),
     rgba(255, 255, 255, 0)
   );
-  --tt-bg-primary: #2b0968;
-  --tt-bg-primary-200: #521b9d;
+  --tt-bg-primary: #1e52b4;
+  --tt-bg-primary-200: #081d5d;
 }
 
 .bg-indigo {

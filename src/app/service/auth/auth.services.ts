@@ -28,9 +28,51 @@ export class AuthServices {
         catchError(this.commonService.handleError),
         tap((resData: any) => {
           console.log(resData);
-          // this.handleAuthendication(resData.operatorDetail);
+          this.handleAuthendication(resData.operatorDetail);
         })
       );
+  }
+
+  autoLogin() {
+    const operatorData: {
+      email: string;
+      id: number;
+      role: string;
+      _token: string;
+      tokenExpirationDate: string;
+      uniqueOperatorId: string;
+      company: string;
+    } = JSON.parse(localStorage.getItem('operatorData'));
+
+    if (!operatorData) {
+      return;
+    }
+
+    const loadedUser = new OperatorUser(
+      operatorData.email,
+      operatorData.id,
+      operatorData._token,
+      operatorData.role,
+      new Date(operatorData.tokenExpirationDate),
+      operatorData.uniqueOperatorId,
+      operatorData.company
+    );
+    if (loadedUser.token) {
+      this.operatorUser.next(loadedUser);
+      const expirationDuration =
+        new Date(operatorData.tokenExpirationDate).getTime() -
+        new Date().getTime();
+
+      this.autoLogout(expirationDuration);
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
+  autoLogout(expirationDuration: number) {
+    this.tokenExpirationTimer = setTimeout(() => {
+      this.logout();
+    }, expirationDuration);
+    console.log(expirationDuration);
   }
 
   private handleAuthendication(userData) {
@@ -43,8 +85,12 @@ export class AuthServices {
       userData.id,
       userData.token,
       userData.role,
-      expirationDate
+      expirationDate,
+      userData.uniqueOperatorId,
+      userData.company
     );
+
+    console.log('data ', userData);
 
     this.operatorUser.next(operatorUser);
 
@@ -53,8 +99,9 @@ export class AuthServices {
 
   logout() {
     this.operatorUser.next(null);
-    this.router.navigateByUrl('/login');
     localStorage.removeItem('operatorData');
+    this.router.navigateByUrl('/login');
+
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
     }

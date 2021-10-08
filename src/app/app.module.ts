@@ -18,6 +18,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TourComponent } from './dashboard/tour/tour.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastComponent } from './common/toast/toast.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ToastComponent } from './common/toast/toast.component';
     ForgotPasswordComponent,
     TourComponent,
     ToastComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

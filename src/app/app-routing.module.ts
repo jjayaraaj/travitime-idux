@@ -1,3 +1,5 @@
+import { AuthGaurd } from './service/gaurd/auth-gaurd.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,8 +23,17 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [AuthGaurd],
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/not-found',
   },
 ];
 

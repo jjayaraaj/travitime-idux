@@ -1,87 +1,83 @@
-<div class="sidebar " [ngClass]="{open: open}">
-  <div class="logo-details">
+<header class="navbar sticky-top bg-white flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><img src="/assets/images/tt-logo-blue.png"
+      class="img-fluid w-50"></a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+    data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap ">
 
-    <div class="logo_name">
-      <img src="assets/images/tt-logo-white.png" style="width:50%" class="img-fluid" alt="">
+      <a class="nav-link  d-flex align-items-center px-3" (click)="logout()"> <i class='bx bx-log-out px-3'></i>Sign
+        out</a>
     </div>
-    <i class='bx bx-menu' id="btn" (click)="onClickSidebarMenu()"></i>
   </div>
-  <ul class="nav-list">
-    <!-- <li>
-      <i class='bx bx-search'></i>
-      <input type="text" placeholder="Search...">
-      <span class="tooltip">Search</span>
-    </li> -->
-    <li>
-      <a href="#">
-        <i class='bx bx-grid-alt'></i>
-        <span class="links_name">Dashboard</span>
-      </a>
-      <span class="tooltip">Dashboard</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-user'></i>
-        <span class="links_name">User</span>
-      </a>
-      <span class="tooltip">User</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-chat'></i>
-        <span class="links_name">Messages</span>
-      </a>
-      <span class="tooltip">Messages</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-pie-chart-alt-2'></i>
-        <span class="links_name">Analytics</span>
-      </a>
-      <span class="tooltip">Analytics</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-folder'></i>
-        <span class="links_name">File Manager</span>
-      </a>
-      <span class="tooltip">Files</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-cart-alt'></i>
-        <span class="links_name">Order</span>
-      </a>
-      <span class="tooltip">Order</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-heart'></i>
-        <span class="links_name">Saved</span>
-      </a>
-      <span class="tooltip">Saved</span>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-cog'></i>
-        <span class="links_name">Setting</span>
-      </a>
-      <span class="tooltip">Setting</span>
-    </li>
-    <li class="profile">
-      <div class="profile-details">
-        <img src="profile.jpg" alt="profileImg">
-        <div class="name_job">
-          <div class="name">Prem Shahi</div>
-          <div class="job">Web designer</div>
-        </div>
-      </div>
-      <i class='bx bx-log-out' id="log_out" (click)="logout()"></i>
-    </li>
-  </ul>
-</div>
-<section class="home-section p-5 ">
+</header>
 
-  <!--dash-->
-  <router-outlet></router-outlet>
-</section>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar collapse">
+      <div class="position-sticky ">
+        <div style="background-color: #081d5d;" class="px-2 py-4 text-white">
+          <p class="fs-6">Company Name</p>
+          <p><small>Travitime ID: TRAVSERIESNUMBER</small></p>
+        </div>
+        <ul class="nav flex-column px-3 pt-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class='bx bx-customize'></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bx-user'></i>
+              Tour Manager
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bx-message'></i>
+              Messages
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bx-calendar'></i>
+              Tour Calendar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bxs-user-account'></i>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bx-support'></i>
+              Support
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class='bx bx-user-pin'></i>
+              Profile
+            </a>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 " style="background-color: #f5f5f5;  ">
+      <div style="height: 50px;" class="d-none d-md-block"></div>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

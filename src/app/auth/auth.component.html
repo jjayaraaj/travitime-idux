@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white login-menu">
+  <div class="container">
+    <a class="navbar-brand text-center text-md-start" href="#"><img src="assets/images/tt-logo-blue.png"
+        class="img-fluid w-50"></a>
+    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarText">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">For Travel Agencies & Tour Operators</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">T-Blog</a>
+        </li>
+      </ul>
+      <div class="d-flex justify-content-between">
+        <a class="btn bg-orange me-3 text-white" routerLink="/signup" type="button">Sign up</a>
+        <a class="btn bg-orange text-white" routerLink="/auth/login" type="button">Login</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="bg-blue-400 d-flex align-items-center w-100 justify-content-center main-div h-100 ">
+
+  <app-login *ngIf="page==='login'"></app-login>
+  <app-forgot-password *ngIf="page==='forgot-password'"></app-forgot-password>
+  <app-reset-password *ngIf="page==='reset-password'"></app-reset-password>
+
+</div>
+
+<app-toast></app-toast>

@@ -57,6 +57,10 @@ body {
   background-color: var(--bs-gray-200);
 }
 
+.bg-orange {
+  background-color: var(--bs-orange);
+}
+
 ::placeholder {
   color: rgb(184, 184, 184);
   opacity: 1; /* Firefox */

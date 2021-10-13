@@ -1,3 +1,4 @@
+import { SlideDownDirective } from './directives/slidedown.directive';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,6 +20,8 @@ import { TourComponent } from './dashboard/tour/tour.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastComponent } from './common/toast/toast.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthComponent } from './auth/auth.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TourComponent,
     ToastComponent,
     PageNotFoundComponent,
+    AuthComponent,
+    ResetPasswordComponent,
+    SlideDownDirective,
   ],
   imports: [
     BrowserModule,

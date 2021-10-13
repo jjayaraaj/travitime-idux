@@ -45,7 +45,7 @@
   display: flex;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   margin: 5px 0;
   padding: 15px 20px;
   align-items: center;
@@ -54,6 +54,7 @@
   color: #fff;
   font-size: 1em;
   font-weight: lighter;
+  cursor: pointer;
 
   /* background: var(--tt-bg-primary); */
 }
@@ -83,6 +84,18 @@
 .sidebar-heading {
   font-size: 0.75rem;
   text-transform: uppercase;
+}
+
+.sidebar-ul-2 {
+  background-color: #3c2c6a;
+  list-style-type: none;
+}
+
+.dropdown-slide-menu {
+  display: none;
+}
+.open .dropdown-slide-menu {
+  display: block !important;
 }
 
 /*
@@ -120,3 +133,7 @@
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
 }
+
+/* #sidebarMenu .nav-item {
+  padding: 0 20px;
+} */

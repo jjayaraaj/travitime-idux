@@ -116,7 +116,7 @@ export class DashboardComponent implements OnInit {
 
     this.authService.operatorUser.pipe(take(1)).subscribe((user) => {
       this.operatorUser = user;
-      console.log(this.operatorUser);
+      //console.log(this.operatorUser);
     });
   }
   onClickSidebarMenu() {

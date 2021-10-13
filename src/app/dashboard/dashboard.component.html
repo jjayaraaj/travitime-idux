@@ -23,46 +23,59 @@
           <p class="fs-6">Company Name</p>
           <p><small>Travitime ID: TRAVSERIESNUMBER</small></p>
         </div>
-        <ul class="nav flex-column px-3 pt-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+        <ul class="nav flex-column  pt-3">
+          <li class="nav-item " routerLink="/dashboard">
+            <a class="nav-link active" aria-current="page">
               <i class='bx bx-customize'></i>
               Dashboard
             </a>
+
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li class="nav-item" appSlideDown>
+            <a class="nav-link" routerLink="/dashboard/tour/all">
               <i class='bx bx-user'></i>
               Tour Manager
             </a>
+            <ul class="sidebar-ul-2 dropdown-slide-menu">
+              <li class=" ">
+                <a class="nav-link " routerLink="/dashboard/tour/add">
+                  <i class='bx bx-customize'></i>
+                  Add Tour
+                </a>
+
+              </li>
+
+
+            </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li class="nav-item" appSlideDown>
+            <a class="nav-link">
               <i class='bx bx-message'></i>
               Messages
             </a>
+
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link">
               <i class='bx bx-calendar'></i>
               Tour Calendar
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link">
               <i class='bx bxs-user-account'></i>
               Customers
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link">
               <i class='bx bx-support'></i>
               Support
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link">
               <i class='bx bx-user-pin'></i>
               Profile
             </a>

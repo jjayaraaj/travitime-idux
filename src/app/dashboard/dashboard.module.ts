@@ -11,13 +11,13 @@ import { EditTourComponent } from './tour/edit-tour/edit-tour.component';
 import { AllToursComponent } from './tour/all-tours/all-tours.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '',
     component: DashboardComponent,
     children: [
       {
-        path: 'home',
+        path: '',
         component: LandingComponent,
       },
       {

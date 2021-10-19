@@ -17,4 +17,8 @@ export class CommonService {
 
     return throwError(errorRes.error.message);
   }
+
+  loadPage(route) {
+    localStorage.setItem('page', route);
+  }
 }

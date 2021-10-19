@@ -1,3 +1,4 @@
+import { CommonService } from './../../service/common/common.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -99,7 +100,7 @@ export class LandingComponent implements OnInit {
   countries = COUNTRIES;
   page = 1;
   pageSize = 4;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private commonsService: CommonService) {}
 
   ngOnInit(): void {}
   refreshCountries() {

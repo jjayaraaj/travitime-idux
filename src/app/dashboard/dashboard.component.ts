@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { OperatorModel } from 'src/app/model/operator';
 import { AuthServices } from './../service/auth/auth.services';
 import { Component, HostListener, OnInit } from '@angular/core';
@@ -106,10 +107,20 @@ export class DashboardComponent implements OnInit {
   public screenHeight: any;
   operatorUser: OperatorModel;
 
-  constructor(private authService: AuthServices) {}
+  constructor(
+    private authService: AuthServices,
+    private route: ActivatedRoute
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
+    this.route.queryParams.subscribe((param) => {
+      console.log(param);
+    });
+
+    const pageName = localStorage.getItem('page');
+    console.log(pageName);
+
     this.refreshCountries();
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
